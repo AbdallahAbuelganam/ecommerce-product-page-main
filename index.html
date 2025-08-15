@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- adding fonts to css -->
+  <link rel="stylesheet" href="CSS/font.css">
+  <!-- displays site properly based on user's device -->
+  <link media="screen and (min-width: 700px)" rel="stylesheet" href="CSS/style.css">
+  <!-- desktop design -->
+  <link media="screen and (max-width: 700px)" rel="stylesheet" href="CSS/mobile.css">
+  <!-- mobile design  -->
+  <title>E-commerce product page</title>
+
+  <style>
+    .attribution {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      place-content: center;
+      z-index: 10;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" style="display:none;">
+    <div class="lightbox-overlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close">
+        <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+            fill-rule="evenodd" />
+        </svg>
+      </button>
+      <div class="lightbox-main-img-container">
+        <button class="lightbox-prev lightbox-nav">
+          <span class="circle"><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 1 3 9l8 8" stroke-width="3" fill="none" fill-rule="evenodd" />
+            </svg></span>
+        </button>
+        <img class="lightbox-main-img" src="images/image-product-1.jpg" alt="Product" />
+        <button class="lightbox-next lightbox-nav">
+          <span class="circle"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path d="m2 1 8 8-8 8" stroke-width="3" fill="none" fill-rule="evenodd" />
+            </svg></span>
+        </button>
+      </div>
+      <div class="lightbox-thumbnails">
+        <div class="thumbnail"><img src="images/image-product-1-thumbnail.jpg" alt="Thumb 1" /></div>
+        <div class="thumbnail"><img src="images/image-product-2-thumbnail.jpg" alt="Thumb 2" /></div>
+        <div class="thumbnail"><img src="images/image-product-3-thumbnail.jpg" alt="Thumb 3" /></div>
+        <div class="thumbnail"><img src="images/image-product-4-thumbnail.jpg" alt="Thumb 4" /></div>
+      </div>
+    </div>
+  </div>
+  <header>
+    <div class="left-header">
+      <div class="logo">
+        <img src="images/logo.svg" alt="sneakers">
+      </div>
+      <!-- mobile hamburger -->
+      <button class="hamburger" aria-label="Open menu">
+        <img src="images/icon-menu.svg" alt="menu">
+      </button>
+      <div class="nav">
+        <a href="#">Collections</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="right-header">
+      <div class="basket">
+        <div class="basket-icon">
+          <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+              fill="#69707D" fill-rule="nonzero" />
+          </svg>
+          <span class="count"></span>
+        </div>
+        <div class="basket-list" style="display: none;">
+          <h6 class="title">Cart</h6>
+          <div class="items" data-count="0">
+          </div>
+        </div>
+      </div>
+      <a href="#" class="profile"><img src="images/image-avatar.png" alt="profile"></a>
+    </div>
+  </header>
+  <main>
+    <div class="product">
+      <div class="preview">
+        <div class="mobile-preview-nav" aria-hidden="false">
+          <button class="preview-prev preview-nav">
+            <span class="circle"><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 1 3 9l8 8" stroke-width="3" fill="none" fill-rule="evenodd" />
+              </svg></span>
+          </button>
+          <button class="preview-next preview-nav">
+            <span class="circle"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="m2 1 8 8-8 8" stroke-width="3" fill="none" fill-rule="evenodd" />
+              </svg></span>
+          </button>
+        </div>
+        <div class="thumbnails">
+          <div class="thumbnail"><img src="images/image-product-1-thumbnail.jpg" alt="product thumbnail 1"></div>
+          <div class="thumbnail"><img src="images/image-product-2-thumbnail.jpg" alt="product thumbnail 2"></div>
+          <div class="thumbnail"><img src="images/image-product-3-thumbnail.jpg" alt="product thumbnail 3"></div>
+          <div class="thumbnail"><img src="images/image-product-4-thumbnail.jpg" alt="product thumbnail 4"></div>
+        </div>
+      </div>
+      <div class="details">
+        <div class="saler">
+          Sneaker Company
+        </div>
+        <h1 class="name">
+          Fall Limited Edition Sneakers
+        </h1>
+        <p class="description">
+          These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+        <span class="final-price">
+          $125.00
+        </span>
+        <span class="discount">
+          50%
+        </span>
+        <span class="original-price">
+          $250.00
+        </span>
+        <div class="buying-field">
+          <div class="counter">
+            <button><img class="minus" src="images/icon-minus.svg" alt="-"></button>
+            <span>0</span>
+            <button><img class="plus" src="images/icon-plus.svg" alt="+"></button>
+          </div>
+          <button type="submit">
+            <span><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill-rule="nonzero" />
+              </svg></span>
+            <p>Add to cart</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="www.frontendmentor.io" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="github.com/AbdallahAbuelganam">abdallah abuelganam</a>.
+  </div>
+  <script src="JS/node.js"></script>
+</body>
+
+</html>
